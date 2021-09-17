@@ -2,6 +2,8 @@ import sys
 from pathlib import Path
 import os
 
+os.system("git clone https://github.com/ultralytics/yolov5")
+
 import cv2
 import numpy as np
 import torch
