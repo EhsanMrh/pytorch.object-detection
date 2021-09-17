@@ -2,9 +2,6 @@ import sys
 from pathlib import Path
 import os
 
-os.system("git clone https://github.com/ultralytics/yolov5")
-os.system("cd yolov5 & pip install -r requirements.txt")
-
 import cv2
 import numpy as np
 import torch
