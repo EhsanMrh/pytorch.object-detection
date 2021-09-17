@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'script/script.js') }}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </p>
+
+    {% if result %}
+        <div>
+            <h2>{{ url_for('display_image', filename = result) }}</h2>
+            <img src="{{ url_for('display_image', filename = result) }}" alt="image">
+        </div>
+    {% endif %}
+
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" class="btn">
+    </form>
+
+
+</body>
+</html>
